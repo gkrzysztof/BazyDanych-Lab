@@ -1,0 +1,7 @@
+.idea
+*.iml
+build/
+__pycache__/
+db_credentials.json
+.DS_Store
+**/.DS_Store
