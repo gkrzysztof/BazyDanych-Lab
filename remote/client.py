@@ -69,7 +69,7 @@ def import_osoby_from_csv_to_postgres():
         for row in reader:
             print(row)
             cur.execute(
-                "INSERT IGNORE INTO osoba VALUES (%s, %s, %s, %s);", tuple(row))
+                "INSERT INTO osoba VALUES (%s, %s, %s, %s) ON CONFLICT (id) DO NOTHING;", tuple(row))
 
     connection.commit()
 
@@ -79,7 +79,7 @@ def import_liczniki_from_csv_to_postgres():
         reader = csv.reader(f, delimiter=';',  quotechar='|')
         for row in reader:
             cur.execute(
-                "INSERT IGNORE INTO licznik VALUES (%s, %s, %s);", row)
+                "INSERT INTO licznik VALUES (%s, %s, %s) ON CONFLICT (id) DO NOTHING;", row)
 
     connection.commit()
 
@@ -89,7 +89,7 @@ def import_pracownicy_from_csv_to_postgres():
         reader = csv.reader(f, delimiter=';',  quotechar='|')
         for row in reader:
             cur.execute(
-                "INSERT IGNORE INTO pracownicy VALUES (%s, %s, %s, %s);", row)
+                "INSERT INTO pracownicy VALUES (%s, %s, %s, %s) ON CONFLICT (id) DO NOTHING;", row)
 
     connection.commit()
 
@@ -99,6 +99,6 @@ def import_pomiary_from_csv_to_postgres():
         reader = csv.reader(f, delimiter=';',  quotechar='|')
         for row in reader:
             cur.execute(
-              "INSERT IGNORE INTO pomiary VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", row)
+              "INSERT INTO pomiary VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", row)
 
     connection.commit()
