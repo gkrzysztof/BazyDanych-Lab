@@ -4,7 +4,7 @@ import simplejson as simplejson
 
 import psycopg
 
-from result import PomiarView
+from remote.result import PomiarView
 
 with open("db_credentials.json") as f:
     dane = simplejson.loads(f.read())

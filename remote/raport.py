@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from remote.remote import fetch_data
+from remote.client import fetch_data
 
 
 def generate_charts(start_date, end_date):

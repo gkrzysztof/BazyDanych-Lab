@@ -2,7 +2,7 @@ import os
 import re
 import sqlite3
 
-from local import store_all, create_osoba, create_pracownik, create_licznik, create_pomiar, export_all_to_csv
+from stacja.local import store_all, create_osoba, create_pracownik, create_licznik, create_pomiar, export_all_to_csv
 from common.model import *
 
 
